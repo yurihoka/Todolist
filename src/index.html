@@ -3,20 +3,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css" />
-    <title>Document</title>
+    <title>TodoList</title>
   </head>
   <body>
     <header class="header">
       <a href="/" class="logo">MY TODO LIST</a>
     </header>
     <main>
-      <form class="form">
-        <label for="create-todo"></label>
-        <input id="create-todo" type="text" placeholder="Add your task" />
-        <div>
-          <button>ADD</button>
-        </div>
-      </form>
+      <div class="wrapper">
+        <form class="form">
+          <label for="create-todo"></label>
+          <input id="create-todo" type="text" placeholder="Add your task" />
+          <div>
+            <button>+</button>
+          </div>
+        </form>
+      </div>
       <div class="alert-container"></div>
       <ul class="todo-list"></ul>
     </main>

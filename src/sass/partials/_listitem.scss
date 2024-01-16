@@ -1,0 +1,20 @@
+.todo-list {
+  &--wrapper {
+    background-color: $inside-background-color;
+    border-radius: $border-radius;
+    padding: 15px 0;
+    margin-bottom: 15px;
+  }
+
+  &--item {
+    margin: 0 24px;
+    padding: 10px 0 5px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $border-color;
+  }
+
+  span {
+    font-size: $secondary-font-size;
+  }
+}

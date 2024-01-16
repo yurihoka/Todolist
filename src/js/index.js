@@ -10,11 +10,14 @@ form.on("submit", (event) => {
 
   if (isValid) {
     const itemList = `
-    <li class="todo-list_item">
+    <div class="todo-list--wrapper">
+    <li class="todo-list--item">
     <span>${value}</span>
-    <button>edit</button>
-    <button>delete</button>
-    </li>`;
+    <div class="btn">
+    <button class="delete-btn">-</button>
+    </div>
+    </li>
+    </div>`;
 
     $(".todo-list").append(itemList);
     input.val("");

@@ -1,29 +1,21 @@
 .form {
   padding: 24px;
-  font-size: 20px;
   display: flex;
+  margin-bottom: 20px;
 
   input {
     width: 100%;
-    margin-bottom: 10px;
     padding: 8px;
-    margin: 0 10px;
-    border: 1px solid rgb(179, 176, 176);
-    border-radius: 5px;
+    margin-right: 10px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    font-size: $secondary-font-size;
   }
 
   input:focus {
     outline: none;
   }
 
-  button {
-    border: none;
-    background-color: rgb(246, 170, 182);
-    color: white;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-  }
   button:active {
     -ms-transform: translateY(1px);
     -webkit-transform: translateY(1px);

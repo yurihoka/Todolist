@@ -1,11 +1,11 @@
 .header {
-  //   background-color: lightpink;
   padding: 24px;
-  color: rgb(25, 25, 25);
+  color: $font-color;
   position: sticky;
   top: 0;
+  text-align: center;
 
   a {
-    font-size: 24px;
+    font-size: $primary-font-size;
   }
 }
