@@ -1,6 +1,8 @@
+@import "partials/global";
 @import "partials/header";
 @import "partials/form";
 @import "partials/alert";
+@import "partials/listitem";
 
 * {
   margin: 0;
@@ -14,6 +16,8 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
+  background-color: $background-color;
+  font-family: $font-family;
 }
 
 ul {
@@ -29,4 +33,18 @@ main {
   min-width: 700px;
   margin: 0 auto;
   flex: 1;
+}
+
+.wrapper {
+  border-radius: 5px;
+  background-color: $inside-background-color;
+}
+
+button {
+  border: none;
+  background-color: $background-color;
+  color: $font-color;
+  border-radius: $border-radius;
+  padding: 10px 20px;
+  cursor: pointer;
 }
