@@ -1,25 +1,34 @@
 const validateInput = (string) => string.length > 0;
-const input = $(".form input");
-const form = $("form.form");
+const input = $("input");
+const form = $(".form");
+const item = $(".todo-list--wrapper");
 
+item.hide();
+
+// Display todo items and alert
 form.on("submit", (event) => {
   event.preventDefault();
 
   const value = input.val();
   const isValid = validateInput(value);
+  const liClass = "todo-list--item";
+  const deleteBtn = "delete-btn";
+  const itemList = `
+  <li class=${liClass}>
+    ${value}
+    <button class=${deleteBtn}>-</button>
+  </li>`;
 
   if (isValid) {
-    const itemList = `
-    <div class="todo-list--wrapper">
-    <li class="todo-list--item">
-    <span>${value}</span>
-    <div class="btn">
-    <button class="delete-btn">-</button>
-    </div>
-    </li>
-    </div>`;
+    item.show();
 
-    $(".todo-list").append(itemList);
+    $("ul").append(itemList);
+
+    $(`.${liClass}`)
+      .find("button")
+      .on("click", (event) => {
+        event.target.parentElement.remove();
+      });
     input.val("");
   } else {
     const message = "Hey, please enter your task more than 1 letter";
@@ -29,8 +38,7 @@ form.on("submit", (event) => {
   }
 });
 
+// Hide alert
 input.on("input", () => {
   $(".alert").remove();
 });
-
-// form;
