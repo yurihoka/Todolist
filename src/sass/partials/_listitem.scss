@@ -11,10 +11,11 @@
     padding: 10px 0 5px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid $border-color;
-  }
 
-  span {
-    font-size: $secondary-font-size;
+    p {
+      font-size: $secondary-font-size;
+    }
   }
 }

@@ -15,7 +15,7 @@ form.on("submit", (event) => {
   const deleteBtn = "delete-btn";
   const itemList = `
   <li class=${liClass}>
-    ${value}
+    <p>${value}</p>
     <button class=${deleteBtn}>-</button>
   </li>`;
 
