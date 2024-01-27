@@ -11,17 +11,24 @@ form.on("submit", (event) => {
 
   const value = input.val();
   const isValid = validateInput(value);
+  const liClass = "todo-list--item";
+  const deleteBtn = "delete-btn";
+  const itemList = `
+  <li class=${liClass}>
+    ${value}
+    <button class=${deleteBtn}>-</button>
+  </li>`;
 
   if (isValid) {
     item.show();
 
-    const itemList = `
-    <li class="todo-list--item">
-    ${value}
-    <button class="delete-btn">-</button>
-    </li>`;
-
     $("ul").append(itemList);
+
+    $(`.${liClass}`)
+      .find("button")
+      .on("click", (event) => {
+        event.target.parentElement.remove();
+      });
     input.val("");
   } else {
     const message = "Hey, please enter your task more than 1 letter";
@@ -29,15 +36,6 @@ form.on("submit", (event) => {
 
     $(".alert-container").append(alert);
   }
-});
-
-$("ul").on("click", ".todo-list--item", () => {
-  // $("").parent(".delete-btn").remove();
-  $(".delete-btn").remove();
-  // target = $(this);
-  // $(this).parent("li").hide();
-  // console.log(ul);
-  // item.hide();
 });
 
 // Hide alert
