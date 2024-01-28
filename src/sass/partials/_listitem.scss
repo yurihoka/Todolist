@@ -1,7 +1,6 @@
 .todo-list {
   &--wrapper {
     background-color: $inside-background-color;
-    border-radius: $border-radius;
     padding: 15px 0;
     margin-bottom: 15px;
   }
@@ -13,9 +12,5 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid $border-color;
-
-    p {
-      font-size: $secondary-font-size;
-    }
   }
 }

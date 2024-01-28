@@ -7,11 +7,11 @@
     <title>TodoList</title>
   </head>
   <body>
-    <header class="header">
-      <a href="/" class="logo">MY TODO LIST</a>
-    </header>
-    <main>
-      <div class="wrapper">
+    <div class="wrapper">
+      <header class="header">
+        <h1>MY TODO LIST</h1>
+      </header>
+      <main>
         <form class="form">
           <label for="create-todo"></label>
           <input id="create-todo" type="text" placeholder="Add your task" />
@@ -19,12 +19,12 @@
             <button>+</button>
           </div>
         </form>
-      </div>
-      <div class="alert-container"></div>
-      <div class="todo-list--wrapper">
-        <ul></ul>
-      </div>
-    </main>
+        <div class="alert-container"></div>
+        <div class="todo-list--wrapper">
+          <ul></ul>
+        </div>
+      </main>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
   </body>
