@@ -23,15 +23,7 @@
 .form input:focus {
   outline: none;
 }
-.form button:active {
-  -ms-transform: translateY(1px);
-  -webkit-transform: translateY(1px);
-  transform: translateY(1px);
-}
 
-.alert {
-  padding: 24px;
-}
 .alert--danger {
   background-color: rgb(111, 178, 203);
   color: white;
@@ -51,6 +43,27 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid white;
+}
+
+.js-mouse {
+  pointer-events: none;
+  position: fixed;
+  top: -15px;
+  left: -15px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 102, 0.5);
+  border-radius: 50%;
+  transform: translate(0, 0) scale(1.1);
+  transition: all 0.3s ease-out;
+  z-index: 9999;
+  opacity: 0;
+}
+
+.js-mouse.js-hover {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 191, 0, 0.5);
 }
 
 * {
@@ -95,25 +108,10 @@ button {
   cursor: pointer;
 }
 
-.js-mouse {
-  pointer-events: none;
-  position: fixed;
-  top: -15px;
-  left: -15px;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(0, 0, 102, 0.5);
-  border-radius: 50%;
-  transform: translate(0, 0) scale(1.1);
-  transition: all 0.3s ease-out;
-  z-index: 9999;
-  opacity: 0;
-}
-
-.js-mouse.js-hover {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 191, 0, 0.5);
+button:active {
+  -ms-transform: translateY(1px);
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 /*# sourceMappingURL=index.css.map */

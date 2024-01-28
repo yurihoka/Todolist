@@ -13,10 +13,4 @@
   input:focus {
     outline: none;
   }
-
-  button:active {
-    -ms-transform: translateY(1px);
-    -webkit-transform: translateY(1px);
-    transform: translateY(1px);
-  }
 }

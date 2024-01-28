@@ -3,8 +3,6 @@ const input = $("input");
 const form = $(".form");
 const item = $(".todo-list--wrapper");
 
-// item.hide();
-
 // Display todo items and alert
 form.on("submit", (event) => {
   event.preventDefault();
@@ -12,11 +10,15 @@ form.on("submit", (event) => {
   const value = input.val();
   const isValid = validateInput(value);
   const liClass = "todo-list--item";
+  const logoClass = "todo-list--logo";
   const deleteBtn = "delete-btn";
   const itemList = `
   <li class=${liClass}>
     <p>${value}</p>
-    <button class=${deleteBtn}>-</button>
+      <div class=${logoClass}>
+        <input type="checkbox" name="checkbox">
+        <button class=${deleteBtn}>-</button>
+      </div>
   </li>`;
 
   if (isValid) {
@@ -25,10 +27,10 @@ form.on("submit", (event) => {
     $("ul").append(itemList);
 
     // Delete todo item
-    $(`.${liClass}`)
+    $(`.${logoClass}`)
       .find("button")
       .on("click", (event) => {
-        event.target.parentElement.remove();
+        event.target.closest(`.${liClass}`).remove();
       });
 
     input.val("");
@@ -47,7 +49,7 @@ input.on("input", () => {
 });
 
 // Cursor
-$(function () {
+$(() => {
   const mouse = $(".js-mouse");
   $(document).on("mousemove", function (e) {
     const x = e.clientX;
