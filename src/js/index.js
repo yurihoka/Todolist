@@ -24,13 +24,19 @@ form.on("submit", (event) => {
 
     $("ul").append(itemList);
 
+    // Delete todo item
     $(`.${liClass}`)
       .find("button")
       .on("click", (event) => {
-        event.target.parentElement.remove();
+        // event.target.parentElement.remove();
+        if ($("todo-list--item ul li").length === 0) {
+          item.hide();
+        }
       });
+
     input.val("");
   } else {
+    // Display alert
     const message = "Hey, please enter your task more than 1 letter";
     const alert = `<p class="alert alert--danger">${message}</p>`;
 
