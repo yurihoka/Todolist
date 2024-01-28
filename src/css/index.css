@@ -12,7 +12,6 @@
 .form {
   padding: 24px;
   display: flex;
-  margin-bottom: 20px;
 }
 .form input {
   width: 100%;
@@ -34,8 +33,10 @@
   padding: 24px;
 }
 .alert--danger {
-  background-color: rgb(224, 112, 88);
+  background-color: rgb(111, 178, 203);
   color: white;
+  text-align: center;
+  backdrop-filter: blur(10px);
 }
 
 .todo-list--wrapper {
@@ -78,7 +79,7 @@ h1 {
 
 .wrapper {
   background-color: rgb(111, 178, 203);
-  width: 50%;
+  width: 40%;
 }
 
 p {
@@ -92,6 +93,27 @@ button {
   color: white;
   padding: 12px 20px;
   cursor: pointer;
+}
+
+.js-mouse {
+  pointer-events: none;
+  position: fixed;
+  top: -15px;
+  left: -15px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 102, 0.5);
+  border-radius: 50%;
+  transform: translate(0, 0) scale(1.1);
+  transition: all 0.3s ease-out;
+  z-index: 9999;
+  opacity: 0;
+}
+
+.js-mouse.js-hover {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 191, 0, 0.5);
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -3,7 +3,7 @@ const input = $("input");
 const form = $(".form");
 const item = $(".todo-list--wrapper");
 
-item.hide();
+// item.hide();
 
 // Display todo items and alert
 form.on("submit", (event) => {
@@ -28,10 +28,7 @@ form.on("submit", (event) => {
     $(`.${liClass}`)
       .find("button")
       .on("click", (event) => {
-        // event.target.parentElement.remove();
-        if ($("todo-list--item ul li").length === 0) {
-          item.hide();
-        }
+        event.target.parentElement.remove();
       });
 
     input.val("");
@@ -47,4 +44,25 @@ form.on("submit", (event) => {
 // Hide alert
 input.on("input", () => {
   $(".alert").remove();
+});
+
+// Cursor
+$(function () {
+  const mouse = $(".js-mouse");
+  $(document).on("mousemove", function (e) {
+    const x = e.clientX;
+    const y = e.clientY;
+    mouse.css({
+      opacity: "1",
+      transform: "translate(" + x + "px," + y + "px)",
+    });
+    $("button").on({
+      mouseenter: function () {
+        mouse.addClass("js-hover");
+      },
+      mouseleave: function () {
+        mouse.removeClass("js-hover");
+      },
+    });
+  });
 });
