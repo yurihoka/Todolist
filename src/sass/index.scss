@@ -4,6 +4,8 @@
 @import "partials/alert";
 @import "partials/listitem";
 @import "partials/cursor";
+@import "partials/checkbox";
+@import "partials/button";
 
 * {
   margin: 0;
@@ -31,24 +33,10 @@ h1 {
 
 .wrapper {
   background-color: $inside-background-color;
-  width: 40%;
+  width: 30%;
 }
 
 p {
   color: $font-color;
   font-size: $secondary-font-size;
-}
-
-button {
-  border: none;
-  background-color: $background-color;
-  color: $font-color;
-  padding: 12px 20px;
-  cursor: pointer;
-}
-
-button:active {
-  -ms-transform: translateY(1px);
-  -webkit-transform: translateY(1px);
-  transform: translateY(1px);
 }

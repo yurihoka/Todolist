@@ -13,4 +13,11 @@
     align-items: center;
     border-bottom: 1px solid $border-color;
   }
+
+  &--logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
 }

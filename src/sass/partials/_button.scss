@@ -1,0 +1,19 @@
+button {
+  border: none;
+  background-color: $background-color;
+  color: $font-color;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+button:active {
+  -ms-transform: translateY(1px);
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+}
+
+.fa-trash {
+  cursor: pointer;
+  color: $background-color;
+  font-size: 20px;
+}

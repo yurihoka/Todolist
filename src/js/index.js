@@ -8,17 +8,21 @@ form.on("submit", (event) => {
   event.preventDefault();
 
   const value = input.val();
+  const msg = "msg";
   const isValid = validateInput(value);
   const liClass = "todo-list--item";
   const logoClass = "todo-list--logo";
+  const checkbox = "checkbox";
   const deleteBtn = "delete-btn";
   const itemList = `
   <li class=${liClass}>
-    <p>${value}</p>
-      <div class=${logoClass}>
-        <input type="checkbox" name="checkbox">
-        <button class=${deleteBtn}>-</button>
-      </div>
+    <div class=${msg}>
+      <p>${value}</p>
+    </div>
+    <div class=${logoClass}>
+      <input type=${checkbox}>
+      <i class="fa-solid fa-trash ${deleteBtn}"></i>
+    </div>
   </li>`;
 
   if (isValid) {
@@ -28,9 +32,25 @@ form.on("submit", (event) => {
 
     // Delete todo item
     $(`.${logoClass}`)
-      .find("button")
+      .find(`.${deleteBtn}`)
       .on("click", (event) => {
         event.target.closest(`.${liClass}`).remove();
+      });
+
+    // Strikethrough
+    $(`.${logoClass}`)
+      .find(`:${checkbox}`)
+      .on("click", (event) => {
+        const target = $(event.target);
+        const strikethroughElem = target.parent().prev();
+
+        if (target.closest(`input`).is(":checked")) {
+          // strikethroughElem.style.textDecoration = "line-through white";
+          strikethroughElem.css({ textDecoration: "line-through white" });
+        } else {
+          // strikethroughElem.style.textDecoration = "none";
+          strikethroughElem.css({ textDecoration: "none" });
+        }
       });
 
     input.val("");

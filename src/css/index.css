@@ -12,13 +12,15 @@
 .form {
   padding: 24px;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .form input {
   width: 100%;
   padding: 8px;
   margin-right: 10px;
   border: 1px solid white;
-  font-size: 18px;
+  font-size: 20px;
 }
 .form input:focus {
   outline: none;
@@ -44,6 +46,12 @@
   align-items: center;
   border-bottom: 1px solid white;
 }
+.todo-list--logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
 
 .js-mouse {
   pointer-events: none;
@@ -64,6 +72,49 @@
   width: 50px;
   height: 50px;
   background-color: rgba(255, 191, 0, 0.5);
+}
+
+input[type=checkbox] {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgb(224, 112, 88);
+  vertical-align: -5px;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked:before {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  transform: rotate(50deg);
+  width: 4px;
+  height: 8px;
+  border-right: 1.5px solid rgb(224, 112, 88);
+  border-bottom: 1.5px solid rgb(224, 112, 88);
+  content: "";
+}
+
+button {
+  border: none;
+  background-color: rgb(224, 112, 88);
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+button:active {
+  -ms-transform: translateY(1px);
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+}
+
+.fa-trash {
+  cursor: pointer;
+  color: rgb(224, 112, 88);
+  font-size: 20px;
 }
 
 * {
@@ -92,26 +143,12 @@ h1 {
 
 .wrapper {
   background-color: rgb(111, 178, 203);
-  width: 40%;
+  width: 30%;
 }
 
 p {
   color: white;
-  font-size: 18px;
-}
-
-button {
-  border: none;
-  background-color: rgb(224, 112, 88);
-  color: white;
-  padding: 12px 20px;
-  cursor: pointer;
-}
-
-button:active {
-  -ms-transform: translateY(1px);
-  -webkit-transform: translateY(1px);
-  transform: translateY(1px);
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=index.css.map */

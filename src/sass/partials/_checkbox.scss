@@ -1,0 +1,22 @@
+input[type="checkbox"] {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid $background-color;
+  vertical-align: -5px;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked:before {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  transform: rotate(50deg);
+  width: 4px;
+  height: 8px;
+  border-right: 1.5px solid $background-color;
+  border-bottom: 1.5px solid $background-color;
+  content: "";
+}
